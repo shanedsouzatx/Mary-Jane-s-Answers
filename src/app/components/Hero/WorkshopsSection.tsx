@@ -68,7 +68,7 @@ export default function WorkshopsSection() {
           ))}
         </div>
 
-        <div className="mt-16">
+        {/* <div className="mt-16">
           <h3 className="text-2xl font-semibold text-green-800 mb-6">Frequently Asked Questions</h3>
           <div className="space-y-4">
             {[
@@ -112,7 +112,7 @@ export default function WorkshopsSection() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </motion.div>
     </section>
   )

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Search, ShoppingCart, Home, Info, User, BookOpen, Utensils, Leaf, Contact, Phone } from 'lucide-react';
+import { Menu, Search, Home, Info, User, BookOpen, Utensils, Leaf, Contact, Phone } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
 
@@ -41,7 +41,6 @@ export default function Header() {
         {/* Right: Search & Cart */}
         <div className="flex items-center space-x-4">
           <Search className="w-6 h-6 cursor-pointer hover:text-green-500 transition-colors" />
-          <ShoppingCart className="w-6 h-6 cursor-pointer hover:text-green-500 transition-colors" />
           
           {/* Mobile Menu Button */}
           <Sheet open={open} onOpenChange={setOpen}>
