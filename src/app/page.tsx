@@ -10,6 +10,12 @@ import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Slideshow from "./components/HeroSection/Slideshow"
+import CoachingSection from "./components/Hero/CoachingSection"
+import GallerySection from "./components/Hero/GallerySection"
+import SeedProvidersSection from "./components/Hero/SeedProvider"
+import WhyAttendSection from "./components/Hero/WhyAttendSection"
+import WorkshopsSection from "./components/Hero/WorkshopsSection"
+import TerminologySection from "./components/Hero/TerminologySection"
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -276,7 +282,7 @@ export default function Home() {
                 title="Beginner's Guide to Cannabis Strains"
                 description="Learn about the differences between indica, sativa, and hybrid strains and how to choose the right one for you."
                 category="Education"
-                image="/hero3.jpg"
+                image="/ab1.jpg"
                 date="May 15, 2023"
               />
             </motion.div>
@@ -286,7 +292,7 @@ export default function Home() {
                 title="5 Delicious Cannabis-Infused Recipes"
                 description="Explore these easy-to-make recipes that will elevate your culinary experience with cannabis."
                 category="Recipes"
-                image="/hero4.jpg"
+                image="/ab2.webp"
                 date="June 2, 2023"
               />
             </motion.div>
@@ -296,7 +302,7 @@ export default function Home() {
                 title="Latest Cannabis Research Breakthroughs"
                 description="Stay informed about the newest scientific discoveries and medical applications of cannabis."
                 category="News"
-                image="/hero5.jpg"
+                image="/ab3.jpg"
                 date="June 10, 2023"
               />
             </motion.div>
@@ -306,7 +312,7 @@ export default function Home() {
                 title="How to Grow Cannabis at Home: A Beginner's Guide"
                 description="Everything you need to know about starting your own small cannabis garden at home legally."
                 category="How-To"
-                image="/hero5.jpg"
+                image="/ab4.jpg"
                 date="June 18, 2023"
               />
             </motion.div>
@@ -316,7 +322,7 @@ export default function Home() {
                 title="Understanding CBD vs. THC: Benefits and Effects"
                 description="A comprehensive comparison of the two most prominent cannabinoids and their effects on the body."
                 category="Education"
-                image="/hero6.jpg"
+                image="/ab5.webp"
                 date="June 25, 2023"
               />
             </motion.div>
@@ -326,7 +332,7 @@ export default function Home() {
                 title="Cannabis and Wellness: Beyond Recreation"
                 description="Explore how cannabis is being integrated into wellness routines for better health and wellbeing."
                 category="Wellness"
-                image="/hero7.jpeg"
+                image="/ab6.jpg"
                 date="July 3, 2023"
               />
             </motion.div>
@@ -345,7 +351,42 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+ {/* Newsletter Section */}
+ <section className="py-20 bg-green-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="p-8 md:p-12">
+              <div className="text-center mb-8">
+                <Badge className="bg-green-100 text-green-800 hover:bg-green-200 mb-4">Stay Updated</Badge>
+                <h2 className="text-2xl md:text-3xl font-bold text-green-900 mb-4">Subscribe to Our Newsletter</h2>
+                <p className="text-gray-700">
+                  Get the latest cannabis news, recipes, and educational content delivered straight to your inbox.
+                </p>
+              </div>
 
+              <form className="space-y-4">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="flex-1 border-green-200 focus:border-green-500 focus:ring-green-500"
+                  />
+                  <Button className="bg-green-600 hover:bg-green-700 text-white">Subscribe</Button>
+                </div>
+                <p className="text-xs text-gray-500 text-center">
+                  By subscribing, you agree to our Privacy Policy and confirm you are at least 21 years of age.
+                </p>
+              </form>
+            </div>
+          </motion.div>
+        </div>
+      </section>
       {/* Features Section */}
       <section id="features" className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -358,30 +399,29 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <Image
-                src="/hero5.jpg"
+                src="/ab7.webp"
                 alt="Cannabis Community"
-                width={600}
-                height={600}
+                width={700}
+                height={800}
                 className="rounded-xl shadow-xl"
               />
             </motion.div>
 
             <motion.div
-              className="lg:w-1/2 space-y-6"
+              className="lg:w-1/2 space-y-5"
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.3 }}
               variants={container}
             >
               <motion.div variants={item}>
-                <Badge className="bg-green-100 text-green-800 hover:bg-green-200 mb-4">Why Choose Us</Badge>
+                {/* <Badge className="bg-green-100 text-green-800 hover:bg-green-200 mb-4">Why Choose Us</Badge> */}
               </motion.div>
               <motion.h2 className="text-3xl md:text-4xl font-bold text-green-900" variants={item}>
-                A Welcoming Community for All Cannabis Enthusiasts
+              Why Attend?
               </motion.h2>
               <motion.p className="text-lg text-gray-700" variants={item}>
-                We've created a space where cannabis users of all experience levels can find valuable information and
-                connect with like-minded individuals in a judgment-free environment.
+              Join our engaging, hands-on workshops designed to empower and educate. Whether you're looking to deepen your understanding of cannabis or explore innovative culinary techniques, our expert-led sessions offer valuable insights and practical tips.
               </motion.p>
 
               <motion.div className="space-y-4 pt-4" variants={item}>
@@ -390,8 +430,8 @@ export default function Home() {
                     <Leaf className="h-6 w-6 text-green-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-green-800">Inclusive Community</h3>
-                    <p className="text-gray-700">Welcoming to all backgrounds, genders, and ages (21+).</p>
+                    <h3 className="text-xl font-bold text-green-800">Expert Insights:</h3>
+                    <p className="text-gray-700">Gain invaluable knowledge from industry professionals.</p>
                   </div>
                 </div>
 
@@ -400,8 +440,8 @@ export default function Home() {
                     <BookOpen className="h-6 w-6 text-green-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-green-800">Expert Knowledge</h3>
-                    <p className="text-gray-700">Content created by cannabis experts and enthusiasts.</p>
+                    <h3 className="text-xl font-bold text-green-800"> Hands-On Learning : </h3>
+                    <p className="text-gray-700"> Master practical skills in a supportive, interactive environment.</p>
                   </div>
                 </div>
 
@@ -410,8 +450,17 @@ export default function Home() {
                     <TrendingUp className="h-6 w-6 text-green-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-green-800">Always Up-to-Date</h3>
-                    <p className="text-gray-700">Latest information on trends, research, and regulations.</p>
+                    <h3 className="text-xl font-bold text-green-800">Expand Your Knowledge :</h3>
+                    <p className="text-gray-700"> Discover new ways to enjoy cannabis responsibly.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="bg-green-100 p-2 rounded-full">
+                    <TrendingUp className="h-6 w-6 text-green-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-green-800">Tailored Sessions:</h3>
+                    <p className="text-gray-700">Reserve your spot today and embark on a journey of discovery and culinary.</p>
                   </div>
                 </div>
               </motion.div>
@@ -421,13 +470,14 @@ export default function Home() {
                   className="bg-green-600 hover:bg-green-700 text-white mt-6"
                   onClick={() => (window.location.href = "tel:+11234567890")}
                 >
-                  <Phone className="mr-2 h-4 w-4" /> Ask Us Anything
+                  <Phone className="mr-2 h-4 w-4" /> Register Now !
                 </Button>
               </motion.div>
             </motion.div>
           </div>
         </div>
       </section>
+      <WhyAttendSection/>
 
       {/* Community Section */}
       <section id="community" className="py-20 bg-green-800 text-white">
@@ -481,45 +531,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Newsletter Section */}
-      <section className="py-20 bg-green-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="p-8 md:p-12">
-              <div className="text-center mb-8">
-                <Badge className="bg-green-100 text-green-800 hover:bg-green-200 mb-4">Stay Updated</Badge>
-                <h2 className="text-2xl md:text-3xl font-bold text-green-900 mb-4">Subscribe to Our Newsletter</h2>
-                <p className="text-gray-700">
-                  Get the latest cannabis news, recipes, and educational content delivered straight to your inbox.
-                </p>
-              </div>
 
-              <form className="space-y-4">
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="flex-1 border-green-200 focus:border-green-500 focus:ring-green-500"
-                  />
-                  <Button className="bg-green-600 hover:bg-green-700 text-white">Subscribe</Button>
-                </div>
-                <p className="text-xs text-gray-500 text-center">
-                  By subscribing, you agree to our Privacy Policy and confirm you are at least 21 years of age.
-                </p>
-              </form>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+<WorkshopsSection/>
+<SeedProvidersSection/>
+      
+<CoachingSection/>
+<GallerySection/>
+<TerminologySection/>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-white">
+     
+    {/* CTA Section */}
+    <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             className="text-center max-w-3xl mx-auto"
@@ -551,102 +573,7 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-green-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="space-y-4">
-              <Link href="/" className="flex items-center space-x-2">
-                <Image src="/logo2.png" alt=" Learn Logo" width={200} height={200} />
-              </Link>
-              <p className="text-green-200">
-                Educating the cannabis community with reliable information, recipes, and how-to guides.
-              </p>
-              <p className="text-green-200">For adults 21 and older.</p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-bold mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="#about" className="text-green-200 hover:text-white transition-colors">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#blog" className="text-green-200 hover:text-white transition-colors">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#features" className="text-green-200 hover:text-white transition-colors">
-                    Features
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#community" className="text-green-200 hover:text-white transition-colors">
-                    Community
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-bold mb-4">Categories</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="#" className="text-green-200 hover:text-white transition-colors">
-                    Education
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-green-200 hover:text-white transition-colors">
-                    Recipes
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-green-200 hover:text-white transition-colors">
-                    News
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-green-200 hover:text-white transition-colors">
-                    How-To Guides
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-green-200 hover:text-white transition-colors">
-                    Wellness
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-bold mb-4">Contact Us</h3>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2">
-                  <Phone className="h-4 w-4" />
-                  <a href="tel:+112345890" className="text-green-200 hover:text-white transition-colors">
-                    (123) 456-7890
-                  </a>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Mail className="h-4 w-4" />
-                  <a href="mailto:maryjanes@gmail.com" className="text-green-200 hover:text-white transition-colors">
-                   maryjanes@gmail.com
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-green-700 mt-12 pt-8 text-center text-green-200">
-            <p>© {new Date().getFullYear()} techcraftinc. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      
     </div>
   )
 }

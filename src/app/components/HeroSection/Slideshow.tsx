@@ -8,23 +8,23 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 const slides = [
   {
     id: 1,
-    image: "/hero1.jpg",
+    image: "/hero10.jpg",
     title: "Educating the Cannabis Community",
-    description: "Stay informed with the latest news, trends, and advancements in the cannabis world. From beginners to experts, we've got you covered.",
+    description: "Stay ahead with the latest news, trends, and innovations in the cannabis industry. Whether you're a beginner or an expert, we provide valuable insights to keep you informed and inspired.",
     buttonText: "Ask Mary",
   },
   {
     id: 2,
-    image: "/hero2.jpg",
-    title: "Discover Premium Cannabis Products",
-    description: "Explore a curated selection of high-quality cannabis products, tailored to your needs for wellness, relaxation, and creativity.",
+    image: "/hero11.jpg",
+    title: "Explore Premium Cannabis Selections",
+    description: "Discover a thoughtfully curated range of high-quality cannabis products designed to enhance wellness, relaxation, and creativity. Find the perfect match for your needs.",
     buttonText: "Shop Now",
   },
   {
     id: 3,
-    image: "/hero3.jpg",
-    title: "Join the Cannabis Community",
-    description: "Connect with like-minded individuals, share experiences, and stay updated with the latest in the cannabis industry.",
+    image: "/hero12.jpg",
+    title: "Connect with the Cannabis Community",
+    description: "Join a vibrant network of like-minded individuals, share experiences, and stay informed on the latest trends and developments in the cannabis industry.",
     buttonText: "Get Started",
   },
 ];
@@ -36,13 +36,14 @@ const Slideshow = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 5000); 
+    // Change slide every 5 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
 
   return (
-    <div className="relative w-full !px-0 h-screen overflow-hidden">
+    <div className="relative w-auto !px-0 h-screen overflow-hidden">
       <Carousel>
         <CarouselContent
           className="w-full h-screen flex transition-transform duration-700"
@@ -68,7 +69,7 @@ const Slideshow = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
-                className="relative text-center text-white p-6 pt-16 max-w-4xl bg-black/40 rounded-xl flex flex-col items-center justify-center"
+                className="relative text-center text-white p-6 pt-16 lg:pt-20 max-w-4xl bg-black/40 rounded-xl flex flex-col items-center justify-center"
               >
                 <motion.h1
                   initial={{ opacity: 0, y: -30 }}
@@ -90,7 +91,7 @@ const Slideshow = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.8 }}
-                  className="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300"
+                  className="px-6 py-3 bg-[#336303] text-white font-semibold rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300"
                 >
                   {slide.buttonText}
                 </motion.button>
