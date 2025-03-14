@@ -7,7 +7,7 @@ export default function Footer(){
     return(
         <>
           {/* Footer */}
-      <footer className="bg-green-900 text-white py-12">
+      <footer className="bg-accent text-white py-12 overflow-x-hidden">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
@@ -24,22 +24,22 @@ export default function Footer(){
               <h3 className="text-lg font-bold mb-4">Quick Links</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="#about" className="text-green-200 hover:text-white transition-colors">
+                  <Link href="/about" className="text-green-200 hover:text-white transition-colors">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="#blog" className="text-green-200 hover:text-white transition-colors">
+                  <Link href="/blog" className="text-green-200 hover:text-white transition-colors">
                     Blog
                   </Link>
                 </li>
                 <li>
-                  <Link href="#features" className="text-green-200 hover:text-white transition-colors">
+                  <Link href="/features" className="text-green-200 hover:text-white transition-colors">
                     Features
                   </Link>
                 </li>
                 <li>
-                  <Link href="#community" className="text-green-200 hover:text-white transition-colors">
+                  <Link href="/community" className="text-green-200 hover:text-white transition-colors">
                     Community
                   </Link>
                 </li>
@@ -50,27 +50,27 @@ export default function Footer(){
               <h3 className="text-lg font-bold mb-4">Categories</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="#" className="text-green-200 hover:text-white transition-colors">
+                  <Link href="/" className="text-green-200 hover:text-white transition-colors">
                     Education
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-green-200 hover:text-white transition-colors">
+                  <Link href="/" className="text-green-200 hover:text-white transition-colors">
                     Recipes
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-green-200 hover:text-white transition-colors">
+                  <Link href="/" className="text-green-200 hover:text-white transition-colors">
                     News
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-green-200 hover:text-white transition-colors">
+                  <Link href="/" className="text-green-200 hover:text-white transition-colors">
                     How-To Guides
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-green-200 hover:text-white transition-colors">
+                  <Link href="/" className="text-green-200 hover:text-white transition-colors">
                     Wellness
                   </Link>
                 </li>

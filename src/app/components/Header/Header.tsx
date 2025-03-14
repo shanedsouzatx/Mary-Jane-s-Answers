@@ -22,15 +22,15 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 py-10 left-0 w-full bg-white/60 shadow-md dark:bg-[#0D2818] z-50">
+    <header className="fixed top-0 py-10 left-0 w-full  shadow-md bg-green-100 z-50">
       <nav className="flex items-center justify-between px-6 lg:px-12 h-16">
-      <div className="text-2xl font-bold text-green-600 dark:text-green-400">
+      <div className="text-2xl font-bold text-[#333A57] dark:text-green-400">
           <Image src="/logo2.png" alt="Logo" width={130} height={130} />
         </div>
         {/* Left: Nav Links */}
         <div className="hidden md:flex space-x-6">
           {navLinks.map(({ href, label }) => (
-            <Link key={href} href={href} className={`flex items-center gap-2 text-lg font-medium transition-colors hover:text-green-500 ${pathname === href ? 'text-black font-semibold' : 'text-gray-800 dark:text-gray-300'}`}>
+            <Link key={href} href={href} className={`flex items-center gap-1 text-lg lg:text-xl font-medium transition-colors hover:text-[#336063] ${pathname === href ? 'text-[#422C47] font-semibold scale-105 ' : 'text-[#336063] scale-90 opacity-90 dark:text-gray-300 hover:scale-100 hover:text-[#336063] hover:transition-colors duration-300 '}`}>
                {label}
             </Link>
           ))}
@@ -40,12 +40,12 @@ export default function Header() {
       
         {/* Right: Search & Cart */}
         <div className="flex items-center space-x-4">
-          <Search className="w-6 h-6 cursor-pointer hover:text-green-500 transition-colors" />
+          <Search className="w-6 h-6 cursor-pointer hover:[#336063] transition-colors" />
           
           {/* Mobile Menu Button */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger className="md:hidden">
-              <Menu className="w-6 h-6 cursor-pointer hover:text-green-500 transition-colors" />
+              <Menu className="w-6 h-6 cursor-pointer hover:text-[#4D869B] transition-colors" />
             </SheetTrigger>
             <SheetContent className="bg-white dark:bg-[#0D2818]">
               <nav className="flex flex-col space-y-6 mt-6">
